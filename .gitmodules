@@ -1,0 +1,4 @@
+[submodule "distribution"]
+	path = distribution
+	url = git@github.com:adrianoenache/poc-working-with-git-submodules-packages-for-distribution.git
+	branch = develop
