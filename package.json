@@ -3,7 +3,7 @@
   "author": "Adriano Enache",
   "license": "MIT",
   "version": "0.0.0",
-  "description": "Proof of concept (POC) of working with Git submodules - Compiled JS",
+  "description": "Proof of concept (POC) — Compiles JavaScript source files via Webpack and publishes the JS output to the distribution package via git submodule.",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
     "env": "prod",
     "root": "/",
     "js": {
-      "source": "./src/javascript/output",
+      "source": "./src/javascript/entry",
       "output": "./distribution/js",
       "public_path": "./distribution/js/"
     }
