@@ -1,0 +1,47 @@
+{
+  "name": "poc-working-with-git-submodules-compiled-js",
+  "author": "Adriano Enache",
+  "license": "MIT",
+  "version": "0.0.0",
+  "description": "Proof of concept (POC) of working with Git submodules - Compiled JS",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adrianoenache/poc-working-with-git-submodules-compiled-js.git"
+  },
+  "engines": {
+    "node": ">=24.14.1",
+    "npm": ">=11.11.0"
+  },
+  "config": {
+    "env": "prod",
+    "root": "/",
+    "js": {
+      "source": "./src/javascript/output",
+      "output": "./distribution/js",
+      "public_path": "./distribution/js/"
+    }
+  },
+  "scripts": {
+    "setup": "node --version && npm --version && npm i && npm run prepare && npm run start",
+    "start": "concurrently -kr \"npm run js-watch\"",
+    "js": "webpack",
+    "js-watch": "npm run js -- --watch",
+    "js-lint": "eslint ./src/javascript/**/*.js -c eslint.config.mjs --fix --max-warnings=0",
+    "npm-reinstall": "node --version && npm --version  && rm -rf node_modules && npm cache clean -f && npm run setup && npm audit fix && npm outdated",
+    "prepare": "husky",
+    "pre-commit": "npm run js-lint"
+  },
+  "dependencies": {
+    "@eslint/eslintrc": "^3.3.5",
+    "@eslint/js": "^10.0.1",
+    "concurrently": "^9.2.1",
+    "dotenv": "^17.4.1",
+    "eslint": "^10.2.0",
+    "glob": "^13.0.6",
+    "globals": "^17.4.0",
+    "husky": "^9.1.7",
+    "webpack-cli": "^7.0.2",
+    "webpack": "^5.105.4"
+  }
+}
