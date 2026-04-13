@@ -32,6 +32,8 @@ This repository compiles JavaScript source files (entry point: `src/javascript/e
 - npm >= 11.11.0
 - Git (with submodule support)
 
+> **Note:** The versions listed above are the minimum tested versions. Any higher version compatible with semver (i.e. no breaking changes) should also work.
+
 ## Project structure
 
 | Directory | Purpose |
